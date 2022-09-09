@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Titulo -->
+
+    <title>Qual é o número?</title>
+
+    <!-- Estilos -->
+
+    <link rel="stylesheet" href="index.css">    
+
+</head>
+<body>
+    <div class="caixa-principal">
+        
+        <!-- Caixa para o título -->
+
+        <div class="titulo">
+            <h1>QUAL É O NÚMERO?</h1>
+            <hr>
+        </div>
+
+
+        <!-- Caixa para as mensagens -->
+
+        <div id="mensagem" class="mensagem"></div>
+
+        <!-- Caixa para o número em formato de display de 7 seguimentos-->
+
+        <div class="numero" id="_numero">     <!-- Por padrão, ao início do jogo apresentará o display com o valor 0-->
+            <div class="digito">
+                <div class="segmentos seg1 ligado"></div>
+                <div class="segmentos seg2 ligado"></div>
+                <div class="segmentos seg3 ligado"></div>
+                <div class="segmentos seg4 ligado"></div>
+                <div class="segmentos seg5 ligado"></div>
+                <div class="segmentos seg6 ligado"></div>
+                <div class="segmento-central seg7 desligado"></div>
+            </div>
+        </div>
+
+        <!-- Caixa para botão de "Novo jogo" -->
+
+        <div id="reiniciar" class="novo-jogo"></div>
+
+        <!-- Caixa para envio do palpite -->
+
+        <div class="envio">
+            <input id="palpite" type="text" placeholder="Digite o palpite" maxlength="3">  <!-- Deixa um limite de digitos igual a 3 para não quebrar o layout-->
+            <button id="enviar" onclick="getPalpite()">Enviar</button>   <!-- Classe atribuída para o envio do palpite-->
+        </div>
+    </div>
+
+    <!-- Script -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+/* VARIÁVEIS GERAIS */
+
+:root {
+    --cor_destaque: rgb(209, 136, 0);
+    --cor_contraste: lightgray;
+    --cor_caixa:#efefef
+}
+
+/*///ESTILOS GERAIS///*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+body {
+    background-color: var(--cor_contraste);
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--cor_destaque);
+    padding: 10px 0px;
+}
+
+hr{
+    border: 1px solid var(--cor_contraste);
+    width: 60%;
+}
+
+/*////ESTILOS DA CAIXA PRINCIPAL////*/
+
+.caixa-principal {
+    padding-top: 50px;
+    background-color: var(--cor_caixa);
+    width: 30vw;
+    height: 75vh;
+    margin: auto;
+    margin-top: 5%;
+    position: relative;
+}
+
+/* ESTILOS PARA O TITULO E CAIXA DE ENVIO */
+
+.titulo, .envio{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.envio {
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    bottom: 2%; 
+}
+
+/* ESTILO PARA CAIXA DA MENSAGEM/DICA */
+
+.mensagem {
+    color: var(--cor_destaque);
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+/*ESTILO PARA O NUMERO
+-Será dividido em segmentos individuais, onde cada segmento será posicionado de maneira com que fique
+igual a um display de 7 segmentos, onde depois serão usadas lógicas com javascript, para que fique com a
+cor preta somente os seguimentos que formam o dígito correspondente utilizando as classes "ligado" e "desligado".*/
+
+.numero {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.segmentos {
+    border-radius: 10px;
+    width: 70px;
+    height: 50px;
+    clip-path: polygon(0% 0%, 17% 20%, 83% 20%, 100% 0%);
+}
+
+.segmento-central {
+    border-radius: 10px;
+    width: 70px;
+    height: 10px;
+    clip-path: polygon(5% 50%, 15% 100%, 85% 100%, 95% 50%, 85% 0%, 15% 0%);
+}
+
+.digito {
+    width: 80px;
+    height: 150px;
+    padding: 10px 0px 0px 10px;
+    position: relative;
+}
+
+.seg2 {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    transform: rotate(90deg);
+}
+
+.seg3 {
+    position: absolute;
+    top: 85px;
+    right: 0px;
+    transform: rotate(90deg);
+}
+
+.seg4 {
+    position: absolute;
+    top: 95px;
+    transform: rotate(180deg);
+}
+
+.seg5 {
+    position: absolute;
+    top: 85px;
+    left: 0px;
+    transform: rotate(-90deg);
+}
+
+.seg6 {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    transform: rotate(-90deg);
+}
+
+.seg7 {
+    position: absolute;
+    top: 72px;
+}
+
+/* CLASSES PARA VISUALIZAÇÃO DO NUMERO NO DISPLAY DE ACORDO COM SUA APLICAÇÃO */
+
+.ligado {
+    background-color: black;
+}
+
+.ligado-correto {
+    background-color: limegreen;
+}
+
+.ligado-erro {
+    background-color: red;
+}
+
+.desligado {
+    background-color: var(--cor_contraste);
+}
+
+/* ESTILOS PARA O BOTAO NOVO JOGO */
+
+.novo-jogo {
+    text-align: center;
+}
+
+.botao {
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    background-image: linear-gradient(to bottom, rgb(73, 73, 73), rgb(143, 143, 143));
+    color: white;
+    border-radius: 5px;
+    border-style: none;
+}
+
+img {
+    width: 17px;
+    color: white;
+    padding-right: 10px;
+}
+
+/* ESTILO PARA PARTE DE ENVIO DO NÚMERO */
+
+.envio input {
+    padding: 5px 5px;
+    width: 70%;
+    margin: 0 5%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid var(--cor_contraste);
+}
+
+input[type=text]:focus {
+    border: 1px solid var(--cor_destaque);
+}
+
+.envio button {
+    color: var(--cor_contraste);
+    width: 15%;
+    background-color: var(--cor_destaque);
+    border: 0px;
+    border-radius: 3px;
+}
+
+/* ESTILO PARA A CAIXA DE MENSAGEM */
+
+.mensagem {
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* MEDIA QUERY PARA RESPONSIVIDADE DA APLICAÇÃO */   
+
+@media(max-width: 1200px) {
+
+    .caixa-principal {
+        width: 40vw;
+    }
+}
+
+@media(max-width: 900px) {
+
+    .caixa-principal {
+        width: 50vw;
+    }
+}
+
+@media(max-width: 700px) {
+
+    .caixa-principal {
+        width: 60vw;
+    }
+}
+
+@media(max-width: 600px) {
+
+    .caixa-principal {
+        width: 70vw;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .caixa-principal {
+        width: 90vw;
+    }
+}
+
+@media(max-width: 350px) {
+
+    .caixa-principal {
+        width: 95vw;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .envio input {
+        width: 60%;
+    }
+
+    .envio button {
+        width: 25%;
+    }
+}
